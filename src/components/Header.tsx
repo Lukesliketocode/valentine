@@ -58,7 +58,7 @@ export default function Header() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          Happy Valentine's Day
+          Happy Valentine&apos;s Day
         </motion.h1>
         <motion.h2
           className="text-2xl sm:text-5xl font-dancing-script mb-4 sm:mb-8 text-pink-500"
@@ -84,7 +84,7 @@ export default function Header() {
   className="bg-pink-500 text-white py-4 px-6 rounded-2xl shadow-lg hover:scale-105 transition-all duration-300 w-full max-w-md mx-auto"
 >
 <p className="text-lg font-semibold ">
-    We've been in love for:
+    We&apos;'ve been in love for:
   </p>
 </RomanticButton>
 <div className="text-center bg-white bg-opacity-80 p-4 rounded-2xl shadow-lg max-w-md mx-auto"> 
@@ -180,49 +180,6 @@ function SparkleOverlay() {
               delay,
               repeat: Infinity,
               ease: "easeInOut",
-            }}
-          />
-        );
-      })}
-    </div>
-  );
-}
-
-/** Confetti Burst on Button Click **/
-function ConfettiBurst() {
-  return (
-    <div className="absolute inset-0 pointer-events-none">
-      {[...Array(50)].map((_, i) => {
-        const size = Math.random() * 6 + 4;
-        const left = Math.random() * 100;
-        const delay = Math.random() * 0.5;
-        const duration = Math.random() * 1 + 1;
-        const rotation = Math.random() * 360;
-        return (
-          <motion.div
-            key={i}
-            className="absolute bg-white opacity-80"
-            style={{
-              width: size,
-              height: size,
-              left: `${left}%`,
-            }}
-            initial={{
-              y: -50,
-              x: 0,
-              rotate: rotation,
-              opacity: 1,
-            }}
-            animate={{
-              y: "120vh",
-              x: [0, Math.random() * 100 - 50],
-              rotate: rotation + 360,
-              opacity: [1, 0],
-            }}
-            transition={{
-              duration: duration,
-              delay: delay,
-              ease: "ease-out",
             }}
           />
         );

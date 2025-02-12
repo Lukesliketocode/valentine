@@ -122,7 +122,7 @@ export default function ValentineProposal() {
             className="bg-white p-10 rounded-2xl shadow-2xl max-w-3xl w-full relative z-10"
           >
             <h2 className="text-4xl font-great-vibes text-pink-600 mb-6 drop-shadow-md text-center">
-              Yay! You're my Valentine!
+              Yay! You&apos;re my Valentine!
             </h2>
             <motion.img
               src='/proposal/yes.gif'

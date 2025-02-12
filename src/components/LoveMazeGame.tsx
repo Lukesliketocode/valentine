@@ -164,7 +164,7 @@ export default function LoveMazeGame() {
               className="mt-8 text-center"
             >
               <p className="text-2xl font-dancing-script text-rose-600 mb-4">
-                You'll always find your way to me!
+                You&apos;ll always find your way to me!
               </p>
               <Button onClick={resetGame} className="px-6 py-2">
                 Play Again
@@ -172,7 +172,7 @@ export default function LoveMazeGame() {
             </motion.div>
           ) : (
             <p className="mt-8 text-center text-sm text-gray-600">
-              Use the arrow keys or tap the buttons to guide the heart to "You"
+              Use the arrow keys or tap the buttons to guide the heart 
             </p>
           )}
         </CardContent>
