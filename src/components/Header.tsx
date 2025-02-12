@@ -42,11 +42,6 @@ export default function Header() {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleButtonClick = () => {
-    setShowConfetti(true);
-    setTimeout(() => setShowConfetti(false), 3000);
-  };
-
   return (
     <header className="relative text-center py-12 sm:py-24 overflow-hidden bg-gradient-to-t from-pink-100 to-[#F9FCF1]">
       {/* Background Animations */}
@@ -88,7 +83,6 @@ export default function Header() {
               Every moment with you is a treasure. Today, I celebrate the love that fills my heart and brightens my world.
             </p>
             <RomanticButton 
-  onClick={handleButtonClick} 
   className="bg-pink-500 text-white py-4 px-6 rounded-2xl shadow-lg hover:scale-105 transition-all duration-300 w-full max-w-md mx-auto"
 >
 <p className="text-lg font-semibold ">

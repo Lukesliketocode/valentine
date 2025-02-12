@@ -17,7 +17,6 @@ import LoveTerminal from "@/components/LoveTerminal"
 import LoveReasons from "@/components/Pokemon"
 
 export default function ValentinesPage() {
-  const [showHiddenMessage, setShowHiddenMessage] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const router = useRouter()
