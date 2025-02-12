@@ -13,7 +13,6 @@ export default function CatchMyLoveGame() {
   const [bucketPosition, setBucketPosition] = useState(50); // percentage
   const gameAreaRef = useRef<HTMLDivElement>(null);
   const bucketRef = useRef<HTMLDivElement>(null);
-  const controls = useAnimation();
 
   const startGame = () => {
     setGameStarted(true);
