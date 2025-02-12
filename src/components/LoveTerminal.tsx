@@ -3,7 +3,6 @@
 import type React from "react"
 import { useState, useEffect } from "react"
 import { Terminal } from "lucide-react"
-import { div } from "framer-motion/client"
 
 const LoveTerminal = () => {
   const [input, setInput] = useState("")

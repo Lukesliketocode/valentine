@@ -5,7 +5,6 @@ import { RomanticButton } from "./ui/romantic-button";
 
 export default function Header() {
   const [showMessage, setShowMessage] = useState(false);
-  const [showConfetti, setShowConfetti] = useState(false);
   const [timeTogether, setTimeTogether] = useState({ years: 0, months: 0, days: 0 });
 
   useEffect(() => {
@@ -47,7 +46,6 @@ export default function Header() {
       {/* Background Animations */}
       <FloatingHearts />
       <SparkleOverlay />
-      {showConfetti && <ConfettiBurst />}
 
       {/* Big Background Heart Behind Text */}
       <BigBackgroundHeart />
