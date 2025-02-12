@@ -18,7 +18,8 @@ export default function LoginPage() {
     e.preventDefault()
 
     if (answer.toLowerCase() === "woodpecker") {
-      document.cookie = `isLoggedIn=true; path=/; max-age=86400; SameSite=Lax; Secure`
+      document.cookie = `isloggedin=true; path=/; max-age=86400; SameSite=Lax`
+
         setTimeout(() => {
           router.push("/valentine")
         }, 100)
