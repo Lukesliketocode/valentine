@@ -31,7 +31,7 @@ export default function LoginPage() {
       <Card className="w-full max-w-lg bg-white backdrop-blur-md shadow-lg z-10">
         <CardHeader>
           <CardTitle className="text-4xl font-great-vibes text-deep-red text-center">
-            My Valentine's Secret
+            My Valentine&apos;s Secret
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -41,7 +41,7 @@ export default function LoginPage() {
                 To unlock our love story, answer this:
               </p>
               <p className="text-lg font-montserrat">
-                What's the name of the bird that smacked into the window at the yoga center?
+              What&apos;s the name of the bird that smacked into the window at the yoga center?
               </p>
             </div>
             <Input
