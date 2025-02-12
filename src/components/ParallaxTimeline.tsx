@@ -1,5 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion, useScroll } from "framer-motion";
+import Image from "next/image";
+import clip from "../../public/screen/clip.png"
 
 interface TimelineEvent {
   date: string;
@@ -59,8 +61,12 @@ export default function ParallaxTimeline() {
       className="md:relative py-16 px-4 bg-gradient-to-b from-pink-200 via-rose-50 to-pink-50 overflow-hidden"
     >
       <div className="absolute top-0 md:top-4 left-12 z-10 hidden md:block">
-        <img
+        <Image
           src="/screen/butterfly.webp"
+          width={100}
+          height={100}
+          quality={100}
+          loading="lazy"
           alt="Our love"
           className="w-24 md:w-32"
         />
@@ -115,7 +121,11 @@ export default function ParallaxTimeline() {
                       whileHover={{ scale: 1.05 }}
                     />
                     <div className="absolute top-72 left-56 z-10 hidden md:block">
-                    <img src="/screen/clip.png" alt="Our love" className="w-24" />
+                    <Image 
+                    src={clip}
+                     quality={100}
+                     loading="lazy"
+                    alt="Our love" className="w-24" />
                   </div>
                   </div>
                 </>
@@ -129,10 +139,10 @@ export default function ParallaxTimeline() {
                       whileHover={{ scale: 1.05 }}
                     />
                      <div className="absolute -top-8 right-[27rem] z-10 hidden md:block">
-                    <img src="/screen/clip.png" alt="Our love" className="w-24" />
+                    <Image src={clip} alt="Our love" loading="lazy" className="w-24" />
                   </div>
                   <div className="absolute bottom-[12rem] right-[27rem] z-10 hidden md:block">
-                    <img src="/screen/clip.png" alt="Our love" className="w-24" />
+                    <Image src={clip} alt="Our love" loading="lazy" className="w-24" />
                   </div>
                   </div>
                   <div className="md:w-1/2 text-left md:pl-8">

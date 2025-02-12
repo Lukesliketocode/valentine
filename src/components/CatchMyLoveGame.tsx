@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function CatchMyLoveGame() {
   const [score, setScore] = useState(0);
@@ -99,7 +100,14 @@ export default function CatchMyLoveGame() {
   return (
     <section className="pt-16 pb-24 md:pb-16 px-4 bg-gradient-to-b from-[#F9FCF1] via-purple-100 to-rose-200 relative">
            <div className="absolute bottom-0 md:bottom-12 left-24 z-10">
-        <img src="/screen/panda.png" alt="Our love" className="w-44 " />
+        <Image
+         src="/screen/panda.png"
+         alt="Our love"
+         width={100}
+         height={100}
+         loading="lazy"
+         quality={100}
+         className="w-44 " />
       </div>
       <h2 className="text-4xl font-great-vibes text-deep-red text-center mb-8 drop-shadow-lg ">
         Catch My Love

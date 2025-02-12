@@ -78,8 +78,12 @@ export default function LoveStory() {
           <CardContent className="p-8 flex flex-col items-center">
             {/* Added image above the Start button */}
             <div>
-            <img
+            <Image
               src="/images/start.webp"
+              width={300}
+              height={300}
+              loading="lazy"
+              quality={100}
               alt="A beautiful beginning"
               className="mb-4 w-72 object-contain"
             />
@@ -101,7 +105,14 @@ export default function LoveStory() {
   return (
     <section className="py-12 bg-gradient-to-b from-rose-200 to-[#F9FCF1] relative">
       <div className="absolute md:-top-4 top-0 -right-4 z-10">
-        <img src="/screen/light.webp" alt="Our love" className="w-48 lg:w-72" />
+        <Image 
+        src="/screen/light.webp"
+         alt="Our love"
+         width={200}
+         height={200}
+         loading="lazy"
+         quality={100}
+          className="w-48 lg:w-72" />
       </div>
       <h2 className="text-4xl font-great-vibes text-red-600 text-center mb-8 mt-24">
         Our Love Story
@@ -119,8 +130,12 @@ export default function LoveStory() {
                 className="absolute inset-0 flex flex-col justify-center items-center text-center"
               >
                 {slides[currentSlide].image && (
-                  <img
+                  <Image
                     src={slides[currentSlide].image}
+                    width={300}
+                    height={300}
+                    loading="lazy"
+                    quality={100}
                     alt="Slide image"
                     className="mb-4 w-72 object-contain"
                   />

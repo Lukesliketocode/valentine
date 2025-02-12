@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Heart, Mail } from "lucide-react"
+import Image from "next/image"
 
 export default function LoveLetterEnvelope() {
   const [isOpen, setIsOpen] = useState(false)
@@ -23,7 +24,14 @@ export default function LoveLetterEnvelope() {
       </AnimatePresence>
 
       <div className="md:absolute -bottom-4 -right-4 z-10">
-        <img src="/screen/cupid.webp" alt="Our love" className="w-40 lg:w-72" />
+        <Image
+         src="/screen/cupid.webp"
+          alt="Our love"
+          width={200}
+          height={200}
+          loading="lazy"
+          quality={100}
+           className="w-40 lg:w-72" />
       </div>
     </section>
   )

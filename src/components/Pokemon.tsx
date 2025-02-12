@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useState, useRef } from "react";
 
 interface Heart {
@@ -147,9 +148,13 @@ interface Heart {
           flip ? "flip-animation" : ""
         }`}
       >
-        <img
+        <Image
           src={currentPokemon}
           alt="Cute Pokémon"
+          width={200}
+          height={200}
+          loading="lazy"
+          quality={100} 
           className={`w-48 h-48 ${pokemonAnimation} mb-6`}
         />
         <p className="text-center text-3xl font-dancing-script tracking-wide text-pink-600 leading-relaxed">

@@ -84,7 +84,7 @@ export default function Header() {
   className="bg-pink-500 text-white py-4 px-6 rounded-2xl shadow-lg hover:scale-105 transition-all duration-300 w-full max-w-md mx-auto"
 >
 <p className="text-lg font-semibold ">
-    We&apos;'ve been in love for:
+    We&apos;ve been in love for:
   </p>
 </RomanticButton>
 <div className="text-center bg-white bg-opacity-80 p-4 rounded-2xl shadow-lg max-w-md mx-auto"> 

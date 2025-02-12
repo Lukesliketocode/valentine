@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
+import Image from "next/image";
 
 // Define default and rejection images
 const defaultImage = "/proposal/propose.gif"; // default image for rejectionCount 0
@@ -137,7 +138,7 @@ export default function ValentineProposal() {
       </AnimatePresence>
 
       <div className="absolute -bottom-4 left-4 z-10">
-        <img src="/screen/couple.webp" alt="Our love" className="w-24 lg:w-44" />
+        <Image src="/screen/couple.webp" alt="Our love" height={200} width={200} loading="lazy" quality={100} className="w-24 lg:w-44" />
       </div>
     </section>
   );
