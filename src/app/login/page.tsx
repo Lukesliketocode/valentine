@@ -17,14 +17,12 @@ export default function LoginPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
 
-    if (answer.toLowerCase() === "woodpecker") {
-      document.cookie = `isloggedin=true; path=/; max-age=86400; SameSite=Lax`
-
-        setTimeout(() => {
-          router.push("/valentine")
-        }, 100)
+    if (answer.toLowerCase() === 'woodpecker') {
+      // Store login state in localStorage
+      localStorage.setItem('isLoggedIn', 'true');
+      router.push('/valentine');
     } else {
-      setError("That's not quite right, my love. Try again!")
+      setError("That's not quite right, my love. Try again!");
     }
   }
 
