@@ -8,9 +8,6 @@ interface PageCoverProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
 }
 
-type FlipBookProps = React.ComponentProps<typeof HTMLFlipBook> & {
-    doublePage: boolean;
-  };
 // PageCover component with forwarded ref and type annotations
 const PageCover = React.forwardRef<HTMLDivElement, PageCoverProps>(
   (props, ref) => {
