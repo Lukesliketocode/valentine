@@ -78,19 +78,32 @@ const LoveBook: React.FC = () => {
   // Define the FlipBook content to avoid code duplication
   const FlipBookContent = (
     <HTMLFlipBook
-      width={flipbookDimensions.width}
-      height={flipbookDimensions.height}
-      showCover={true}
-      flippingTime={1000}
-      style={{ margin: "0" }}
-      maxShadowOpacity={0.5}
-      className="album-web"
-      startPage={0}
-      size="fixed"
-      drawShadow={true}
-      usePortrait={false}
-      mobileScrollSupport={true}
-    >
+  width={flipbookDimensions.width}
+  height={flipbookDimensions.height}
+  // Providing default values for the required props:
+  minWidth={300}         // Set an appropriate minimum width
+  maxWidth={800}         // Set an appropriate maximum width
+  minHeight={400}        // Set an appropriate minimum height
+  maxHeight={1000}       // Set an appropriate maximum height
+  startZIndex={0}        // Default z-index (adjust if needed)
+  autoSize={false}       // Whether the book should auto size
+  clickEventForward={false} // Default value (change as needed)
+  useMouseEvents={true}  // Enable mouse events by default
+  swipeDistance={30}     // Default swipe distance (adjust as needed)
+  showPageCorners={true} // Default value for showing page corners
+  disableFlipByClick={false} // Whether flipping by click is disabled
+  //
+  drawShadow={true}
+  flippingTime={1000}
+  usePortrait={false}
+  maxShadowOpacity={0.5}
+  showCover={true}
+  mobileScrollSupport={true}
+  style={{ margin: "0" }}
+  className="album-web"
+  startPage={0}
+  size="fixed"
+>
       {/* Cover Pages */}
       <PageCover>.</PageCover>
       <PageCover>.</PageCover>
