@@ -91,7 +91,7 @@ const LoveBook: React.FC = () => {
       usePortrait={false}
       mobileScrollSupport={true}
       // On mobile, force single-page mode; otherwise use double-page view
-      {...({ doublePage: !isMobile } as any)}
+      doublePage={!isMobile}
     >
       {/* Cover Pages */}
       <PageCover>.</PageCover>
