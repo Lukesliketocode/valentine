@@ -8,6 +8,9 @@ interface PageCoverProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
 }
 
+type FlipBookProps = React.ComponentProps<typeof HTMLFlipBook> & {
+    doublePage: boolean;
+  };
 // PageCover component with forwarded ref and type annotations
 const PageCover = React.forwardRef<HTMLDivElement, PageCoverProps>(
   (props, ref) => {
@@ -90,8 +93,6 @@ const LoveBook: React.FC = () => {
       drawShadow={true}
       usePortrait={false}
       mobileScrollSupport={true}
-      // On mobile, force single-page mode; otherwise use double-page view
-      doublePage={!isMobile}
     >
       {/* Cover Pages */}
       <PageCover>.</PageCover>
