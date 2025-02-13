@@ -4,9 +4,6 @@ import Image from "next/image"
 export default function Playlist() {
   return (
     <section className="py-16 relative bg-gradient-to-b from-pink-50 via-pink-100 to-blue-50">
-       <div className="absolute top-0 left-4 z-10 md:hidden">
-        <Image src="/screen/music2.webp" width={200} height={200} loading="lazy" alt="Our love" className="w-36 lg:w-52" />
-      </div>
       <h2 className="text-4xl font-great-vibes text-deep-red text-center mt-16 mb-8">Our Love Playlist</h2>
       <Card className="bg-rose-gold max-w-md mx-auto transform -rotate-1 shadow-lg overflow-hidden bg-pink-400">
         <CardContent className="p-4">
