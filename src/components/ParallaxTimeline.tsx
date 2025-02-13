@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import { motion, useScroll } from "framer-motion";
 import Image from "next/image";
-import clip from "../../public/screen/clip.png";
 
 interface TimelineEvent {
   date: string;
