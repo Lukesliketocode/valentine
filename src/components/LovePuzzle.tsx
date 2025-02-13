@@ -128,7 +128,7 @@ export default function SlidingPuzzle() {
   }
 
   return (
-    <section className="py-16 px-4 bg-gradient-to-b from-[#F9FCF1] to-pink-200">
+    <section className="py-16 px-4 bg-gradient-to-b from-[#F9FCF1] to-pink-100">
       <h2 className="text-5xl font-great-vibes text-center mb-10 text-pink-600 drop-shadow-lg">
         Sliding Puzzle of Love
       </h2>

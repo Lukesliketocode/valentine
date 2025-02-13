@@ -15,6 +15,7 @@ import LoveMazeGame from "../../components/LoveMazeGame"
 import LoveStoryTimeline from "../../components/LoveStoryTimeline"
 import LoveTerminal from "@/components/LoveTerminal"
 import LoveReasons from "@/components/Pokemon"
+import LoveBook from "@/components/LoveBook"
 
 export default function ValentinesPage() {
   const [scrollProgress, setScrollProgress] = useState(0)
@@ -80,6 +81,7 @@ export default function ValentinesPage() {
           transition={pageTransition}
         > 
           <LovePuzzle />
+          <LoveBook/>
           <ParallaxTimeline />
           <Playlist />
           <LoveReasons/>
