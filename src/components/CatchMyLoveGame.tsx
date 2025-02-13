@@ -22,12 +22,13 @@ export default function CatchMyLoveGame() {
     setHearts([]);
   };
 
+  // Add hearts every second while the game is running
   useEffect(() => {
     if (gameStarted && !gameOver) {
       const interval = setInterval(() => {
         setHearts((prevHearts) => [
           ...prevHearts,
-          { id: Date.now(), x: Math.random() * 100 }, // x is now a percentage
+          { id: Date.now(), x: Math.random() * 100 }, // x is in percentage
         ]);
       }, 1000);
 
@@ -35,24 +36,40 @@ export default function CatchMyLoveGame() {
     }
   }, [gameStarted, gameOver]);
 
+  // Handle bucket movement using both mouse and touch events
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
+    const updateBucketPosition = (clientX: number) => {
       if (gameAreaRef.current) {
         const rect = gameAreaRef.current.getBoundingClientRect();
-        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const x = ((clientX - rect.left) / rect.width) * 100;
         setBucketPosition(Math.max(0, Math.min(x, 100)));
+      }
+    };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      updateBucketPosition(e.clientX);
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      // Prevent default to avoid scrolling while playing
+      e.preventDefault();
+      if (e.touches.length > 0) {
+        updateBucketPosition(e.touches[0].clientX);
       }
     };
 
     if (gameStarted && !gameOver) {
       window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("touchmove", handleTouchMove, { passive: false });
     }
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchmove", handleTouchMove);
     };
   }, [gameStarted, gameOver]);
 
+  // Check for collisions between hearts and the bucket
   useEffect(() => {
     const checkCollisions = () => {
       if (bucketRef.current) {
@@ -68,10 +85,10 @@ export default function CatchMyLoveGame() {
                 heartRect.right <= bucketRect.right
               ) {
                 setScore((prevScore) => prevScore + 1);
-                return false; // remove the heart
+                return false; // remove the caught heart
               }
             }
-            return true; // keep the heart
+            return true; // keep the heart falling
           });
         });
       }
@@ -83,6 +100,7 @@ export default function CatchMyLoveGame() {
     }
   }, [gameStarted, gameOver]);
 
+  // End the game when score reaches 20
   useEffect(() => {
     if (score >= 20) {
       setGameOver(true);
@@ -99,20 +117,21 @@ export default function CatchMyLoveGame() {
 
   return (
     <section className="pt-16 pb-24 md:pb-16 px-4 bg-gradient-to-b from-[#F9FCF1] via-purple-100 to-rose-200 relative">
-           <div className="absolute bottom-0 md:bottom-12 left-24 z-10">
+      <div className="absolute bottom-0 md:bottom-12 left-24 z-10">
         <Image
-         src="/screen/panda.png"
-         alt="Our love"
-         width={100}
-         height={100}
-         loading="lazy"
-         quality={100}
-         className="w-44 " />
+          src="/screen/panda.png"
+          alt="Our love"
+          width={100}
+          height={100}
+          loading="lazy"
+          quality={100}
+          className="w-44"
+        />
       </div>
-      <h2 className="text-4xl font-great-vibes text-deep-red text-center mb-8 drop-shadow-lg ">
+      <h2 className="text-4xl font-great-vibes text-deep-red text-center mb-8 drop-shadow-lg">
         Catch My Love
       </h2>
- 
+
       <Card className="max-w-3xl mx-auto bg-white/80 shadow-2xl rounded-2xl overflow-hidden">
         <CardContent className="p-6">
           <div
@@ -186,7 +205,8 @@ export default function CatchMyLoveGame() {
           </p>
           {gameStarted && !gameOver && (
             <p className="mt-2 text-center text-sm text-gray-600">
-              Move your mouse to control the bucket and catch the falling hearts!
+              Move your mouse or touch and drag to control the bucket and catch
+              the falling hearts!
             </p>
           )}
         </CardContent>
